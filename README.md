@@ -5,7 +5,7 @@
 New way for testing and learning by e-exam  </caption>
 <thead>
 <th>
-<td> Member Name </td>
+ Member Name
 </th>
 </thead>
 
