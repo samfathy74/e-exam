@@ -192,9 +192,9 @@
             </div>
             <hr />
 
-            <div class="center-block" style="width: 100%;">
+  <div class="center-block" style="width: 100%;">
                 <div class="text-center">
-                    <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BorderColor="White" BorderStyle="Outset" BorderWidth="2px" Caption="Questions and Answers Details" CellPadding="1" CellSpacing="1" DataSourceID="SqlDataSource3" Font-Names="Gadugi" ForeColor="White" HorizontalAlign="Center" PageSize="6" Width="100%">
+                    <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BorderColor="White" BorderStyle="Outset" BorderWidth="2px" Caption="Questions and Answers Details" CellPadding="1" CellSpacing="1" DataSourceID="SqlDataSource3" Font-Names="Gadugi" ForeColor="White" HorizontalAlign="Center" PageSize="6" Width="100%" DataKeyNames="QuestionID">
                         <Columns>
                             <asp:BoundField DataField="QuestionID" HeaderText="QuestionID" InsertVisible="False" ReadOnly="True" SortExpression="QuestionID" />
                             <asp:BoundField DataField="QuestionDesc" HeaderText="QuestionDesc" SortExpression="QuestionDesc" />
@@ -209,7 +209,7 @@
                             <asp:BoundField DataField="QuestionLevel" HeaderText="QuestionLevel" SortExpression="QuestionLevel" />
                             <asp:BoundField DataField="Chapter" HeaderText="Chapter" SortExpression="Chapter" />
                             <asp:BoundField DataField="DateTime" HeaderText="DateTime" SortExpression="DateTime" />
-                            <asp:CommandField ButtonType="Button" ControlStyle-BackColor="Red" ControlStyle-CssClass="EditButton" HeaderText="Delete" ShowDeleteButton="True">
+                              <asp:CommandField ButtonType="Button" ControlStyle-BackColor="Red" ControlStyle-CssClass="EditButton" HeaderText="Delete" ShowDeleteButton="True">
                             <ControlStyle BackColor="Red" CssClass="EditButton" />
                             <ItemStyle HorizontalAlign="Center" />
                             </asp:CommandField>
@@ -221,9 +221,7 @@
                         <RowStyle BackColor="#ff5f5f" Font-Names="Gadugi" ForeColor="White" />
                         <AlternatingRowStyle BackColor="#ff2525" ForeColor="White" />
                         <EmptyDataRowStyle ForeColor="Black" HorizontalAlign="Center" />
-                        <EmptyDataTemplate>
-                            no users data here
-                        </EmptyDataTemplate>
+                        <EmptyDataTemplate> no data here </EmptyDataTemplate>
                         <EditRowStyle Font-Bold="True" ForeColor="Black" />
                         <HeaderStyle BackColor="#920e0e" Font-Bold="True" Font-Names="Gadugi" Font-Size="Medium" ForeColor="White" Height="50px" HorizontalAlign="Center" VerticalAlign="Middle" />
                         <PagerStyle BackColor="#920e0e" Font-Bold="True" Font-Names="Gadugi" ForeColor="White" Height="50px" HorizontalAlign="Center" />
