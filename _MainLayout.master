@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="_MainLayout.master.cs" Inherits="_MainLayout" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="shortcut icon" type="image/ico" href="ico/title.png" />
+    <link rel="icon" type="image/ico" href="ico/title.png" />
+    <link rel="apple-touch-icon" type="image/ico" href="ico/title.png" />
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,mozile=1"/>
+        <link id="DarkMode" href="Style/dark.css" rel="stylesheet" disabled/>
+
+    <link href="~/Style/bootstrap.min.css" rel="stylesheet" media="all"/> 
+    <link href="Style/buttons.css" rel="stylesheet" media="all"/>
+    <link href="Style/icheck-bootstrap.min.css" rel="stylesheet" media="all"/>
+    <link href="Style/icheck-bootstrap.css" rel="stylesheet" media="all"/>
+    <link href="~/Style/CSSstyle.css" rel="stylesheet" media="all"/>
+        <title>	Online Examination System | Online Exam Software | Online Exam  Free | E-exam</title>
+     <style>
+        .switch {
+            display: inline-block;
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 1.25rem;
+            width: 100px;
+            text-align: center;
+            font-size: 1rem;
+            padding: 0.1875rem;
+            color: white;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+     
+    <script>
+      function onKeyDown() {
+          if (event.keyCode == 123 ||(event.ctrlKey && event.keyCode == 85))
+          { // Prevent F12
+              return false;
+          }
+          else if (event.ctrlKey && event.shiftKey && event.keyCode == 73)
+          { // Prevent Ctrl+Shift+I        
+              return false;
+          }
+      } 
+    </script>
+
+</head>
+
+<body onkeydown = "onKeyDown();" oncontextmenu="return false" onselect="return false">
+
+    <form id="form1" runat="server" spellcheck="true" >
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <%-- header --%>
+        <header id="header" class="site-header header-style-8 full-width" itemscope="itemscope">
+            <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" id="btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div style="display: block;" class="header navbar-left">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        <asp:LinkButton ID="LinkHome" Text="∑–exam." runat="server" PostBackUrl="~/WelcomePage.aspx" ForeColor="White" Font-Underline="False">
+                        </asp:LinkButton>
+                        <h1 class="switch" id="EnableDarkMode" onclick="myFunction()" >Turn ON Dark Mode</h1>
+                    </div>
+
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li>
+                            <asp:LinkButton ID="linklogin" runat="server" PostBackUrl="~/Login.aspx" ToolTip="Log in">
+                         <i class="glyphicon glyphicon-log-in"></i>&nbsp;Log In
+                            </asp:LinkButton>
+                        </li>
+
+                        <li>
+                            <asp:LinkButton ID="linksignup" runat="server" Style="margin-right: -40px;" PostBackUrl="~/WelcomePage.aspx#goto" ToolTip="Sign Up">
+                        <i class="glyphicon glyphicon-user"></i>&nbsp;Registration
+                            </asp:LinkButton>
+                        </li>
+
+                        <li class="Pic">
+                            <asp:ImageButton ID="ImageProfile" runat="server" ImageUrl="~/ico/icons8_man_in_blue_t_shirt_32.png" Visible="False" ToolTip="Profile" PostBackUrl="~/UserProfile.aspx" />
+                        </li>
+
+                        <li class="lblname">
+                            <asp:Label ID="lbluser" runat="server" ForeColor="#FFFFCC" Font-Names="Century Gothic" Font-Size="Medium"><i></i></asp:Label>
+                        </li>
+                        
+                        <li>
+                            <asp:LinkButton ID="linklogout" runat="server" OnClick="linklogout_Click" Visible="False" ToolTip="Log out">
+                           <i class="glyphicon glyphicon-log-out"></i>&nbsp;Log out 
+                            </asp:LinkButton>
+                        </li>
+                        <li>
+                             <asp:ImageButton ID="ImgFeedback" runat="server" CssClass="ImgFeedback" ImageUrl="~/ico/feedback.ico" AlternateText="Feedback" DescriptionUrl="Feedback" PostBackUrl="~/Feedback.aspx" ToolTip="Feedback" />
+                        </li>
+
+                        <li>
+                             <asp:ImageButton ID="ImgAbout" runat="server" CssClass="ImgAbout" ImageUrl="~/ico/about.ico" AlternateText="About us" DescriptionUrl="About us" PostBackUrl="~/About.aspx" ToolTip="About us" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+   <footer runat="server" class="ContentFooter" id="ContentFooter">
+        <div class="center-block">
+            <span class="copyright center-block">&copy;<%: DateTime.Now.Year %> All Copyright Saved By Team Members S.A.M </span>
+            <br />
+            <div class="center-block" style="text-align-last: center;">
+
+            <a href="#Facebook.com" class="social">
+                <img alt="Facebook" title="Facebook" src="ico/facebook.png" /></a>
+            <a href="#" class="social">
+                <img alt="Youtube" title="Youtube" src="ico/youtube.png" /></a>
+            <a href="#Instagram.com" class="social">
+                <img alt="Instagram" title="Instagram" src="ico/instagram.png" /></a>
+            <a href="#Twitter.com" class="social">
+                <img alt="Twitter" title="Twitter" src="ico/twitter.png" /></a>
+            <a href="#LinkedIn.com" class="social">
+                <img alt="LinkedIn" title="LinkedIn" src="ico/linkedin.png" /></a>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+
+   <script>
+       var DarkCss = document.getElementById("DarkMode");
+       var TurnDarkMode = document.getElementById("EnableDarkMode");
+
+function myFunction() {
+
+    if (DarkCss.disabled == false) {
+        DarkCss.disabled = true;
+        TurnDarkMode.innerHTML = 'Turn ON Dark Mode';
+
+    }
+    else if (DarkCss.disabled == true) {
+        DarkCss.disabled = false;
+        TurnDarkMode.innerHTML = 'Turn OFF Dark Mode';
+    }
+}
+</script>
+
+     
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿
+    #clockdiv {
+        font-family: Century 'Century Schoolbook';
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        margin-top: -20px;
+        left: 94%;
+        float: right;
+        display: grid;
+        position: fixed;
+    }
+
+    #clockdiv > div {
+        padding: 10px;
+        border-radius: 5px;
+        background: #00BF96;
+        display: inline-block;
+        width: 75px;
+    }
+
+    #clockdiv div > span {
+        padding: 10px;
+        border-radius: 3px;
+        background: #00816A;
+        display: inline-block;
+        transform: translateY(-2px);
+        box-shadow: inset black 0px 0px 7px 0px;
+    }
+
+    #clockdiv span:hover {
+        transform: translateY(-5px);
+        cursor: pointer;
+    }
+
+smalltext {
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+#demo {
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    color: red;
+}
