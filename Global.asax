@@ -30,10 +30,10 @@
     void Session_End(object sender, EventArgs e)
     {
         //LogoutAction.RedirectToLoginPage.ToString("Login.aspx");
-        //Response.Redirect("Login.aspx");
-        //Session.Abandon();
-        //Session.Timeout = 0;
-        //Session.Clear();
+        Response.Redirect("Login.aspx");
+        Session.Abandon();
+        Session.Timeout = 0;
+        Session.Clear();
         // Code that runs when a session ends. 
         // Note: The Session_End event is raised only when the sessionstate mode
         // is set to InProc in the Web.config file. If session mode is set to StateServer 
