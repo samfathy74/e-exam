@@ -20,6 +20,6 @@ New way for testing and learning by e-exam  </caption>
 
 
 <tr>
-<td> <li> Mohammed Abd-elgoad El-nagar</li> </td>
+<td> <li> Mohamed abdel-gawad hamed elnaggar</li> </td>
 </tr>
  </table>
