@@ -262,7 +262,7 @@ public partial class Exam : System.Web.UI.Page
             }
             else
             {
-                //Response.Redirect("StudentHome.aspx");
+                Response.Redirect("StudentHome.aspx");
             }
         }
         catch (Exception ex)
