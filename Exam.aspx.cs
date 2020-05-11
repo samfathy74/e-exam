@@ -92,7 +92,7 @@ public partial class Exam : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(conString);
         con.Open();
-        SqlCommand cmd = new SqlCommand("SELECT SubjectID FROM Tbl_Subject WHERE SubjectName='" + Session["SubjectName"] + "'", con);
+        SqlCommand cmd = new SqlCommand("SELECT SubjectID FROM Tbl_Subject WHERE SubjectName='" + Session["SubjectName"] + "' And EduLevelID='" + Session["EduLevelID"] +"'", con);
         SqlDataReader read = cmd.ExecuteReader();
         read.Read();
         Session["SubjectID"] = read["SubjectID"];
